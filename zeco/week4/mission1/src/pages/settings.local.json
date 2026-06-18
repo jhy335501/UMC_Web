@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/jhy33/Desktop/UMC_Web_study/zeco/week3/mission1/mission1//**)",
+      "Read(//c/Users/jhy33/Desktop/UMC_Web_study/zeco/week3/mission1/mission1/**)"
+    ]
+  }
+}

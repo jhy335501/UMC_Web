@@ -1,0 +1,102 @@
+/* 전체 배경과 폰트 설정 */
+body {
+  background-color: #f4f7f6;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.container {
+  width: 760px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* 입력창 스타일 */
+#todo-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+  transition: border-color 0.3s;
+}
+
+#todo-input:focus {
+  border-color: #6c5ce7;
+}
+
+/* 리스트 컨테이너 */
+.lists-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.lists-container section {
+  flex: 1;
+}
+
+h2 {
+  font-size: 16px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 개별 할 일 아이템 */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #fafafa;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* 버튼 스타일 */
+button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* 완료 버튼 */
+button.complete-btn {
+  background-color: #e1f5fe;
+  color: #03a9f4;
+}
+
+/* 삭제 버튼 */
+button.delete-btn {
+  background-color: #ffebee;
+  color: #ef5350;
+}
+
+/* 해낸 일 리스트의 텍스트 스타일 */
+#done-list li {
+  color: #aaa;
+  background-color: #f9f9f9;
+}

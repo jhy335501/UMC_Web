@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aido Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        background-color: white;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: white;
+        box-shadow: 0 2px 5px black;
+        border-radius: 20px;
+        margin: 12px 20px;
+      }
+
+      .navbar__logo-wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .navbar__logo-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+        object-fit: contain;
+      }
+
+      .navbar__logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+      }
+
+      .navbar__menu {
+        display: flex;
+        gap: 40px;
+      }
+
+      .navbar__menu-item {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .navbar__menu-item:hover {
+        color: orange;
+      }
+
+      .navbar__lang {
+        display: flex;
+        gap: 8px;
+      }
+
+      .navbar__lang-btn {
+        background-color: transparent;
+        border: 2px solid darkgrey;
+        color: gray;
+        padding: 6px 14px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      /* 버튼 활성화 상태 */
+      .navbar__lang-btn--active {
+        background-color: orange;
+        color: white;
+        border-color: orange;
+      }
+
+      /*  @media query를 활용한 반응형 설정 - 텍스트 메뉴 숨김 처리 */
+      @media (max-width: 768px) {
+        .navbar__menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__logo-wrapper">
+        <img
+          src="https://www.aido.kr/logo.png"
+          alt="Aido 고양이"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">Aido</span>
+      </div>
+
+      <div class="navbar__menu">
+        <a href="#" class="navbar__menu-item">고양이 친구들</a>
+        <a href="#" class="navbar__menu-item">앱 다운로드</a>
+      </div>
+
+      <div class="navbar__lang">
+        <button
+          class="navbar__lang-btn navbar__lang-btn--active"
+          data-lang="ko"
+          onclick="navigateLanguage('ko')"
+        >
+          KO
+        </button>
+        <button
+          class="navbar__lang-btn"
+          data-lang="en"
+          onclick="navigateLanguage('en')"
+        >
+          EN
+        </button>
+      </div>
+    </nav>
+
+    <script>
+      /* 메뉴 클릭 시 현재 경로에 따라 색상이 달라지는 기능
+      클릭된 버튼을 직접 추적하여 활성화 상태를 관리합니다.
+       */
+      function navigateLanguage(lang) {
+        const buttons = document.querySelectorAll('.navbar__lang-btn');
+
+        // 모든 버튼에서 활성화 클래스 제거 후 클릭된 버튼에만 추가
+        buttons.forEach((btn) => {
+          btn.classList.remove('navbar__lang-btn--active');
+        });
+        document
+          .querySelector(`.navbar__lang-btn[data-lang="${lang}"]`)
+          .classList.add('navbar__lang-btn--active');
+      }
+    </script>
+  </body>
+</html>

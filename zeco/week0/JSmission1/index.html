@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="할 일을 입력하고 Enter를 누르세요!"
+      />
+
+      <div class="lists-container">
+        <section>
+          <h2>해야 할 일</h2>
+          <ul id="todo-list"></ul>
+        </section>
+
+        <section>
+          <h2>해낸 일</h2>
+          <ul id="done-list"></ul>
+        </section>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

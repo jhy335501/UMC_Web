@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex & Grid Layout Mission</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+        display: grid;
+
+        /* 가로 4등분 (1:1:1:1 비율) */
+        grid-template-columns: repeat(4, 1fr);
+
+        /* 세로 4등분 (임의의 비율 배분 1.5 : 3.5 : 3.5 : 1.5) */
+        grid-template-rows: 1.5fr 3.5fr 3.5fr 1.5fr;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .header {
+        grid-column: 1 / 2; /* 1번째 칸 */
+        background-color: #171c2b;
+      }
+      .menu {
+        grid-column: 2 / 5; /* 2번째 칸부터 끝까지 */
+        background-color: #f1404b;
+      }
+
+      .hero {
+        grid-column: 1 / 5; /* 전체 차지 */
+        background-color: #558cd0;
+      }
+
+      .main {
+        grid-column: 1 / 3; /* 1~2번째 칸 (50%) 차지 */
+        background-color: #27374d;
+      }
+      /* 3번째 칸(25%)은 HTML에 요소를 넣지 않아 자연스럽게 공백이 됩니다. */
+
+      /* 우측 사이드바 구역 (Grid 안에서 Flex 사용) */
+      .sidebar-container {
+        grid-column: 4 / 5; /* 4번째 칸 (25%) 차지 */
+        display: flex;
+        flex-direction: column; /* 세로로 배치 */
+      }
+      .image {
+        flex: 1; /* 부모 높이의 절반 차지 */
+        background-color: #c4e4e3;
+        color: black;
+      }
+      .extra {
+        flex: 1; /* 부모 높이의 절반 차지 */
+        background-color: #4ebd96;
+        color: black;
+      }
+
+      .banner {
+        grid-column: 1 / 5; /* 전체 차지 */
+        background-color: #fbd668;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box header">HEADER</div>
+    <div class="box menu">MENU</div>
+
+    <div class="box hero">HERO</div>
+
+    <div class="box main">MAIN</div>
+    <div class="sidebar-container">
+      <div class="box image">IMAGE</div>
+      <div class="box extra">EXTRA</div>
+    </div>
+
+    <div class="box banner">BANNER</div>
+  </body>
+</html>
